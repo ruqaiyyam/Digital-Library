@@ -1,0 +1,208 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+
+/* Body and background image */
+body {
+    font-family: Arial, sans-serif;
+    background: url('https://images.pexels.com/photos/1290141/pexels-photo-1290141.jpeg?cs=srgb&dl=pexels-ivo-rainha-527110-1290141.jpg&fm=jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.navbar a:hover {
+    color: #FFD700;
+}
+
+/* Catalog Section */
+.catalog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background: rgba(0, 0, 0, 0.6); /* Transparent background */
+    padding: 20px;
+}
+
+.catalog-content {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Catalog title */
+.catalog-title {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #FFD700; /* Golden color */
+    animation: slideUp 1.5s ease-out;
+}
+
+/* Catalog description */
+.catalog-description {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    opacity: 0.8;
+}
+
+/* Book list styling */
+.book-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.book-item {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+.book-item:hover {
+    transform: scale(1.1); /* Hover effect */
+}
+
+.book-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.book-image:hover {
+    transform: scale(1.05);
+}
+
+.book-title {
+    font-size: 1.5em;
+    color: #FFD700;
+    font-weight: bold;
+}
+
+.login-button {
+    width: 200px;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFD700;
+    color:#333333;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.login-button:hover {
+    background-color: #D4AF37;
+}
+
+.navbar .logout-button {
+    background-color: #FFD700;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar .logout-button:hover {
+    background-color: #D4AF37;
+}
+
+#greetingContainer {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    background-color: rgba(0, 0, 0, 0.8); 
+    color: #ffffff; 
+    padding: 15px 25px; 
+    border-radius: 25px; 
+    font-size: 1.2em; 
+    font-family: 'Arial', sans-serif; 
+    font-weight: bold;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5); 
+    animation: fadeIn 1.5s ease-in-out; 
+    text-align: center; 
+    z-index: 1000; 
+}
+
+/* Keyframes for fadeIn animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px); /* Slight upward movement */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Final position */
+    }
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+}
