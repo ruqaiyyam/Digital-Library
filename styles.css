@@ -1,0 +1,290 @@
+/* Style for the search bar container */
+.search-form {
+    display: flex;
+    justify-content: flex-end; /*Aligns the content to the right */
+    align-items: center;
+    margin-top: 0px;
+    margin-left: 100px;
+    margin-right: 1px; /* Add space from the right edge */
+}
+
+/* Style for the search input */
+.search-form input {
+    padding: 8px 15px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    outline: none;
+    width: 200px; /* Adjust based on your design */
+    transition: border-color 0.3s ease;
+}
+
+/* Focus state for the input field */
+.search-form input:focus {
+   
+    border-color: #007BFF; /* Highlight border on focus */
+}
+
+/* Style for the search button */
+.search-form button {
+    padding: 8px 15px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-left: 10px; /* Space between input and button */
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover state */
+.search-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Make the search bar responsive */
+@media (max-width: 768px) {
+    .search-form {
+        flex-direction: column;
+        align-items: flex-end; /* Align items to the right on mobile */
+        margin-right: 10px; /* Smaller margin on mobile */
+    }
+
+    .search-form input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .search-form button {
+        width: 100%;
+    }
+}
+
+body {
+    font-family:'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FF88;
+}
+
+header {
+    text-align: center;
+    background-color: #f4f4f4;
+    position: relative;
+}
+
+.header-image {
+    width: 100%;
+    height: auto;
+}
+
+h1 {
+    margin: 20px 0;
+}
+
+.search-container {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+#search-bar {
+    padding: 10px;
+    font-size: 16px;
+    width: 250px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+}
+
+.genres {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.genre {
+    text-align: center;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.genre-image {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    margin-top: 10px;
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #D8DBBD; /* Background color */
+    padding: 20px 0; /* Padding for top and bottom */
+    border-bottom: 3px solid #A0A47B; /* Subtle border at the bottom */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+/* Navbar list styling */
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    gap: 30px; /* Increased space between links */
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar link styling */
+.navbar a {
+    color: black; /* Text color */
+    text-decoration: none;
+    padding: 12px 25px; /* Padding around the links */
+    border-radius: 6px; /* Rounded corners for each link */
+    font-size: 1.1em; /* Slightly larger font size */
+    font-weight: 500; /* Medium weight for the text */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover */
+}
+
+/* Navbar link hover effect */
+.navbar a:hover {
+    background-color: #A0A47B; /* Darker shade for hover */
+    color: white; /* Change text color on hover */
+    transform: translateY(-3px); /* Slight bounce effect */
+}
+
+/* Active link styling */
+.navbar a:active {
+    background-color: #8D9B5A; /* Even darker color for active link */
+    transform: translateY(1px); /* Visual feedback when clicking */
+}
+
+/* Add a slight border to the links */
+.navbar a {
+    border: 2px solid transparent; /* Transparent border by default */
+    padding: 10px 20px;
+}
+
+.navbar a:hover {
+    border-color: #A0A47B; /* Border color on hover */
+}
+
+#searchResultsContainer {
+    
+    
+    border-radius: 8px;
+    
+    box-shadow: 0 2px 10px rgb(255, 212, 136);
+    
+    padding: 20px;
+
+    box-sizing: border-box;
+    margin: 50px;
+    padding: 0;
+
+    
+    }
+
+.aa{
+    font-size: 30px;
+    
+}
+
+.book-item {
+    display: flex;
+    align-items: flex-start; /* Align items at the top */
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #F5F5DC;
+}
+
+.book-item a {
+    display: flex;
+    text-decoration: none; /* Remove the underline from the links */
+    color: inherit; /* Inherit the text color */
+}
+
+
+.book-cover {
+    width: 200px; /* Set the width */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 15px;
+    border-radius: 5px; /* Optional: Rounded corners for the image */
+    object-fit: cover; /* Ensure the image fits the box without distortion */
+}
+
+.book-details {
+    display: flex;
+    flex-direction: column; /* Stack title and author vertically */
+}
+
+.book-item h3 {
+    margin: 0 0 5px;
+    font-size: 1.5em;
+}
+
+.book-item p {
+    margin: 5px 0;
+    color: #555; /* Optional: Add a subtle color for text */
+    font-size: 1.2em;
+}
+
+/* Bounce animation */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-15px);
+    }
+    60% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Apply bounce effect on hover */
+.genre-image:hover {
+    animation: bounce 0.6s;
+}
+
+/* Styling for the welcome text */
+/* Styling for the full-width welcome text */
+/* Reset default body and header margins */
+body, header {
+    margin: 0;
+    padding: 0;
+}
+
+/* Full-width styling for the welcome text */
+.welcome {
+    color: #FFFFFF; /* Text color */
+    background-color: #B59F78; /* Background color */
+    padding: 20px 0; /* Vertical padding */
+    width: 100vw; /* Full viewport width */
+    text-align: center; /* Center align text */
+    font-size: 3em; /* Large font size */
+    margin: 0; /* Remove default margin */
+    box-sizing: border-box; /* Include padding in total width */
+}
+
+/* Styling to ensure header image covers full width and is flush with welcome text */
+.header-image {
+    display: block;
+    width: 100vw; /* Full viewport width */
+    height: auto;
+    margin: 0; /* Remove any potential margin */
+    padding: 0;
+    box-sizing: border-box;
+}

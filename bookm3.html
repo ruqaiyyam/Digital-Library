@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Woman in the Window</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, rgba(58, 2, 2, 0.9), rgba(255, 99, 71, 0.8));
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .heading {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #fff;
+            text-decoration: underline;
+            font-style: italic;
+        }
+
+        .book {
+            width: 250px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            margin-top: 400px;
+        }
+
+        .info {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            width: 100%;
+            max-width: 900px;
+            font-size: 1.2rem;
+            text-align: left;
+        }
+
+        .info pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .plot {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            margin-top: 50px;
+            width: 100%;
+            max-width: 1000px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .download, .read, .Open {
+            padding: 15px 30px;
+            font-size: 1rem;
+            background-color: #1E90FF;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .download:hover, .read:hover, .Open:hover {
+            background-color: #4169E1;
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 100%;
+                padding: 20px;
+            }
+
+            .heading {
+                font-size: 2.5rem;
+            }
+
+            .info {
+                width: 100%;
+                font-size: 1rem;
+            }
+
+            .plot {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading"><i><b>The Woman in the Window</b></i></h1>
+
+        <img class="book" src="mfic3.jpg" alt="The Woman in the Window">
+
+        <div class="info">
+            <pre>
+<b>INFO:</b>
+Author:                  A.J. Finn
+Language:                English
+Series:                  Not part of a series
+Genre:                   Psychological thriller
+Published:               January 2, 2018
+Publisher:               William Morrow
+Publication place:       United States
+Media type:              Print (hardcover, paperback), eBook, Audiobook
+Pages:                   427
+Followed by:             Not applicable
+            </pre>
+        </div>
+
+        <div class="plot">
+            <p>
+                <b>The Woman in the Window</b> by A.J. Finn is a gripping psychological thriller that follows Anna Fox, an agoraphobic woman who spends her days drinking wine, watching old movies, and spying on her neighbors. One day, she witnesses something shocking in her neighbor's house, but her condition and her unreliable memory make it difficult for anyone to believe her. As the truth unravels, Anna confronts secrets about her own life and the mysterious events unfolding around her. The novel is a masterful blend of suspense, psychological depth, and unexpected twists.
+            </p>
+        </div>
+
+        <div class="button-container">
+            <a href="/public/The-Woman-In-The-Window.pdf" target="_blank">
+                <button class="Open">Read Online</button>
+            </a>
+            <a href="/public/The-Woman-In-The-Window.pdf" download="The-Woman-in-the-Window.pdf">
+                <button class="download">Download</button>
+            </a>
+            
+            <a href="mystry.html">
+                <button class="read">More like this</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

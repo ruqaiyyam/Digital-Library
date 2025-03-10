@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Library</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li class="aa"><a href="main.html">Home</a></li>
+                <li class="aa"><a href="about.html">About</a></li>
+                <li class="aa"><a href="catalogUnprotected.html">Catalog</a></li>
+                <li class="aa"><a href="contact.html">Contact</a></li>
+                <li class="aa"><a href="login.html">Login</a></li>
+            </ul>
+            <form id="searchForm" class="search-form" onsubmit="handleSearch(event)">
+                <input type="text" id="searchInput" placeholder="Search for a book..." name="query" required>
+                <button type="submit">Search</button>
+
+                <div id="search-results"></div>
+            </form>
+        </nav>
+        
+        <img src="https://images.pexels.com/photos/1290141/pexels-photo-1290141.jpeg?cs=srgb&dl=pexels-ivo-rainha-527110-1290141.jpg&fm=jpg" alt="Library Header" class="header-image">
+        <h1 class="welcome">Welcome to the Digital Library</h1>
+    </header>
+    <main>
+        <section class="genres">
+            <div class="genre" onclick="window.location.href='fiction.html'">
+                <a href="/fiction.html"><img src="fiction.jpg" alt="Fiction" class="genre-image"></a>
+                <h2>Fiction</h2>
+            </div>
+            <div class="genre" onclick="window.location.href='nonfiction.html'">
+                <a href="/non-fiction.html"><img src="non-fiction.jpg" alt="Non-Fiction" class="genre-image"></a>
+                <h2>Non-Fiction</h2>
+            </div>
+            <div class="genre" onclick="window.location.href='sciencefiction.html'">
+                <a href="/scifi.html"><img src="science.jpg" alt="Science Fiction" class="genre-image"></a>
+                <h2>Science Fiction</h2>
+            </div>
+            <div class="genre" onclick="window.location.href='mystery.html'">
+                <a href="/mystry.html"><img src="mystery.jpg" alt="Mystery" class="genre-image"></a>
+                <h2>Mystery</h2>
+            </div>
+        </section>
+    </main>
+   
+    <script src="search.js"></script>
+    
+</body>
+</html>
+

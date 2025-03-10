@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog - Digital Library</title>
+    <link rel="stylesheet" href="catalog.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="main.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="catalog.html">Catalog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#" id="logoutButton">Logout</a></li>
+            </ul>
+        </nav>
+        <div id="greetingContainer" class="greeting"></div> <!-- Placeholder for greeting -->
+    </header>
+
+    <main>
+        <section class="catalog">
+            <div class="catalog-content">
+                <h1 class="catalog-title">Digital Library Catalog</h1>
+                <p class="catalog-description">Explore our vast collection of books across various genres. Find your next great read here!</p>
+
+                <div class="book-list">
+                    <div class="book-item">
+                        <a href="/fiction.html"><img src="fiction.jpg" alt="Fiction Book" class="book-image"></a>
+                        <h3 class="book-title">Fiction</h3>
+                    </div>
+                    <div class="book-item">
+                        <a href="/non-fiction.html"><img src="non-fiction.jpg" alt="Non-Fiction Book" class="book-image"></a>
+                        <h3 class="book-title">Non-Fiction</h3>
+                    </div>
+                    <div class="book-item">
+                        <a href="scifi.html"><img src="/science.jpg" alt="Science Fiction Book" class="book-image"></a>
+                        <h3 class="book-title">Science Fiction</h3>
+                    </div>
+                    <div class="book-item">
+                        <a href="mystry.html"><img src="mystery.jpg" alt="Mystery Book" class="book-image"></a>
+                        <h3 class="book-title">Mystery</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Digital Library. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Check if the user is logged in (if there's an authToken in localStorage)
+        const authToken = localStorage.getItem('authToken');
+        const fullName = localStorage.getItem('fullName');
+
+        if (!authToken) {
+            // Redirect to the login page if not logged in
+            window.location.href = 'login.html';
+        } else if (fullName) {
+            // Display the user's full name
+            const greetingContainer = document.getElementById('greetingContainer');
+            greetingContainer.textContent = `Welcome, ${fullName}`;
+        }
+
+        // Attach the logout functionality
+        const logoutButton = document.getElementById('logoutButton');
+        logoutButton.addEventListener('click', () => {
+            // Remove the authToken and fullName from localStorage
+            localStorage.removeItem('authToken');
+            localStorage.removeItem('fullName');
+
+            // Redirect to the login page
+            window.location.href = 'login.html';
+        });
+    </script>
+</body>
+</html>

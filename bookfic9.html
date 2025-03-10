@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All the Light We Cannot See</title> 
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, rgba(58, 2, 2, 0.9), rgba(255, 99, 71, 0.8));
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .heading {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #fff;
+            text-decoration: underline;
+            font-style: italic;
+        }
+
+        .book {
+            width: 250px; /* Reduced image size */
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            margin-top: 600px; /* Increased margin-top to push the image further down */
+        }
+
+        .info {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            width: 100%;
+            max-width: 700px; /* Widened info section */
+            font-size: 1.2rem;
+            text-align: left;
+            margin-bottom:0px;
+        }
+
+        .info pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .plot {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            margin-top: 150px;
+            width: 100%;
+            max-width: 1000px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            margin-bottom: 5px;
+        }
+
+        .download, .read, .Open {
+            padding: 15px 30px;
+            font-size: 1rem;
+            background-color:#1E90FF;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .download:hover, .read:hover, .Open:hover {
+            background-color: #4169E1;
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 100%;
+                padding: 20px;
+            }
+
+            .heading {
+                font-size: 2.5rem;
+            }
+
+            .info {
+                width: 100%;
+                font-size: 1rem;
+            }
+
+            .plot {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading"><i><b>All the Light We Cannot See</b></i></h1>
+
+        <img class="book" src="fic9.jpg" alt="All the Light We Cannot See Book Cover">
+
+        <div class="info">
+            <pre>
+<b>INFO:</b>
+Author :                Anthony Doerr
+Language :              English
+Genre :                 Historical Fiction, War
+Set in :                World War II, France and Germany
+Publisher :             Scribner
+Publication date :      6 May 2014
+Publication place :     United States
+Media type :            Print (hardcover & paperback)
+Pages :                 531 (first edition)
+OCLC :                  854763014
+Dewey Decimal :         813.6
+Followed by :           Cloud Cuckoo Land
+            </pre>
+        </div>
+
+        <div class="plot">
+            <p><b>All the Light We Cannot See</b> by Anthony Doerr is a historical novel set during World War II, following the lives of two characters: Marie-Laure, a blind French girl, and Werner, a German soldier. As the war ravages Europe, their stories unfold in parallel, with Marie-Laure fleeing Paris and Werner being recruited by the Nazis. Their lives eventually intersect in the occupied town of Saint-Malo. The novel explores themes of survival, loss, and the human spirit amidst the devastation of war. It won the Pulitzer Prize for Fiction in 2015.</p>
+        </div>
+
+        <div class="button-container">
+            <!-- Open button to read the book online -->
+            <a href="/public/AllTheLightWeCannotSee.pdf" target="_blank">
+                <button class="Open">Read Online</button>
+            </a>
+
+            <!-- Download button to download the PDF -->
+            <a href="/public/AllTheLightWeCannotSee.pdf" download="AllTheLightWeCannotSee.pdf">
+                <button class="download">Download</button>
+            </a>
+
+            <!-- More like this button -->
+            <a href="fiction.html">
+                <button class="read">More like this</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Kite Runner</title> 
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, rgba(58, 2, 2, 0.9), rgba(255, 99, 71, 0.8));
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .heading {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #fff;
+            text-decoration: underline;
+            font-style: italic;
+        }
+
+        .book {
+            width: 250px; /* Reduced image size */
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            margin-top: 600px; /* Increased margin-top to push the image further down */
+        }
+
+        .info {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            width: 100%;
+            max-width: 700px; /* Widened info section */
+            font-size: 1.2rem;
+            text-align: left;
+            margin-bottom:0px;
+        }
+
+        .info pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .plot {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            margin-top: 150px;
+            width: 100%;
+            max-width: 1000px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            margin-bottom: 5px;
+        }
+
+        .download, .read, .Open {
+            padding: 15px 30px;
+            font-size: 1rem;
+            background-color:#1E90FF;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .download:hover, .read:hover, .Open:hover {
+            background-color: #4169E1;
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 100%;
+                padding: 20px;
+            }
+
+            .heading {
+                font-size: 2.5rem;
+            }
+
+            .info {
+                width: 100%;
+                font-size: 1rem;
+            }
+
+            .plot {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading"><i><b>The Kite Runner</b></i></h1>
+
+        <img class="book" src="fic3.jpg" alt="The Kite Runner Book Cover">
+
+        <div class="info">
+            <pre>
+<b>INFO:</b>
+Author :                Khaled Hosseini
+Language :              English
+Genre :                 Historical Fiction, Drama
+Set in :                Afghanistan, United States
+Publisher :             Riverhead Books
+Publication date :      2003
+Publication place :     United States
+Media type :            Print (hardcover & paperback)
+Pages :                 371 (first edition)
+OCLC :                  52451298
+Dewey Decimal :         813.6
+Followed by :           A Thousand Splendid Suns
+            </pre>
+        </div>
+
+        <div class="plot">
+            <p>First published in 2003, *The Kite Runner* by Khaled Hosseini tells the story of Amir, a young boy from a wealthy family in Kabul, Afghanistan, and his complex relationship with Hassan, the son of his father's servant. The novel explores themes of friendship, betrayal, redemption, and the personal cost of seeking forgiveness. Set against the backdrop of the political turmoil in Afghanistan, the story follows Amir’s journey as he moves to the United States and later returns to a war-torn Afghanistan to confront his past and find redemption. *The Kite Runner* has become a widely acclaimed bestseller and was adapted into a film in 2007.</p>
+        </div>
+
+        <div class="button-container">
+            <!-- Open button to read the book online -->
+            <a href="/public/TheKiteRunner.pdf" target="_blank">
+                <button class="Open">Read Online</button>
+            </a>
+
+            <!-- Download button to download the PDF -->
+            <a href="/public/TheKiteRunner.pdf" download="TheKiteRunner.pdf">
+                <button class="download">Download</button>
+            </a>
+
+            <!-- More like this button -->
+            <a href="fiction.html">
+                <button class="read">More like this</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

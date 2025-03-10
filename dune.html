@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Library - PDF Reader</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <style>
+        /* General Styling */
+        body { font-family: 'Poppins', sans-serif; background: #f4f4f4; margin: 0; text-align: center; }
+        h1 { color: #444; margin-top: 10px; }
+
+        /* Main Container */
+        .main-container { display: flex; }
+        .sidebar {
+            width: 250px;
+            background: #222;
+            color: white;
+            padding: 20px;
+            height: 100vh;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .sidebar h2 { font-size: 20px; margin-bottom: 10px; }
+        .bookmark-list { list-style: none; padding: 0; }
+        .bookmark-list li {
+            padding: 8px;
+            background: #333;
+            margin: 5px 0;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .bookmark-list li:hover { background: #444; }
+
+        /* PDF Viewer */
+        #pdf-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+        }
+        canvas { display: block; max-width: 100%; border-radius: 10px; }
+
+        /* Controls */
+        .controls {
+            background: #fff;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .controls button, .controls input {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .controls button {
+            background: #007bff;
+            color: white;
+        }
+        .controls button:hover { background: #0056b3; }
+        .controls input { width: 50px; text-align: center; }
+
+        /* Dark Mode */
+        .dark-mode {
+            background: #111;
+            color: white;
+        }
+        .dark-mode .controls { background: #222; }
+        .dark-mode .sidebar { background: #000; }
+        .dark-mode .controls button { background: #444; }
+    </style>
+</head>
+<body>
+
+    <h1>📖 Digital Library - PDF Reader</h1>
+
+    <div class="controls">
+        <button onclick="prevPage()">⬅️ Prev</button>
+        <button onclick="nextPage()">Next ➡️</button>
+        <input type="number" id="page-input" min="1" style="width: 50px;" onchange="goToPage()" />
+        <span id="page-info">Loading...</span>
+        <button onclick="zoomIn()">🔍➕</button>
+        <button onclick="zoomOut()">🔍➖</button>
+        <button onclick="toggleFullscreen()">🖥 Fullscreen</button>
+        <button onclick="saveBookmark()">📌 Bookmark</button>
+        <button onclick="clearBookmark()">❌ Clear</button>
+        <button onclick="toggleDarkMode()">🌙 Dark Mode</button>
+    </div>
+
+    <div class="main-container">
+        <div class="sidebar">
+            <h2>📑 Bookmarks</h2>
+            <ul class="bookmark-list" id="bookmark-list">
+                <li onclick="goToBookmark(1)">📍 Page 1</li>
+            </ul>
+        </div>
+
+        <div id="pdf-container">
+            <canvas id="pdf-canvas"></canvas>
+        </div>
+    </div>
+
+    <script>
+        const pdfUrl = "/public/Dune.pdf"; // Replace with your PDF file
+        let pdfDoc = null;
+        let currentPage = parseInt(localStorage.getItem("lastPage")) || 1;
+        let scale = 1.5;
+        const canvas = document.getElementById("pdf-canvas");
+        const ctx = canvas.getContext("2d");
+        const pageInfo = document.getElementById("page-info");
+        const pageInput = document.getElementById("page-input");
+        const bookmarkList = document.getElementById("bookmark-list");
+
+        async function loadPDF() {
+            try {
+                pdfDoc = await pdfjsLib.getDocument(pdfUrl).promise;
+                pageInput.max = pdfDoc.numPages;
+                renderPage(currentPage);
+            } catch (error) {
+                console.error("Error loading PDF:", error);
+                alert("Failed to load PDF. Check the URL.");
+            }
+        }
+
+        async function renderPage(pageNum) {
+            if (!pdfDoc || pageNum < 1 || pageNum > pdfDoc.numPages) return;
+            currentPage = pageNum;
+            localStorage.setItem("lastPage", currentPage);
+            pageInfo.innerText = `Page ${currentPage} of ${pdfDoc.numPages}`;
+            pageInput.value = currentPage;
+            const page = await pdfDoc.getPage(pageNum);
+            const viewport = page.getViewport({ scale });
+
+            canvas.width = viewport.width;
+            canvas.height = viewport.height;
+            const renderContext = { canvasContext: ctx, viewport };
+            await page.render(renderContext);
+        }
+
+        function nextPage() { if (currentPage < pdfDoc.numPages) renderPage(currentPage + 1); }
+        function prevPage() { if (currentPage > 1) renderPage(currentPage - 1); }
+        function goToPage() { const pageNumber = parseInt(pageInput.value); if (!isNaN(pageNumber)) renderPage(pageNumber); }
+        function zoomIn() { scale += 0.2; renderPage(currentPage); }
+        function zoomOut() { if (scale > 0.5) { scale -= 0.2; renderPage(currentPage); } }
+        function toggleFullscreen() { document.documentElement.requestFullscreen().catch(() => alert("Fullscreen not supported.")); }
+
+        function saveBookmark() {
+            const page = currentPage;
+            if (!document.querySelector(`#bookmark-${page}`)) {
+                const li = document.createElement("li");
+                li.id = `bookmark-${page}`;
+                li.innerHTML = `📍 Page ${page}`;
+                li.onclick = () => goToBookmark(page);
+                bookmarkList.appendChild(li);
+            }
+            alert(`Bookmarked Page ${page}`);
+        }
+
+        function clearBookmark() {
+            bookmarkList.innerHTML = '<li onclick="goToBookmark(1)">📍 Page 1</li>';
+            alert("All bookmarks cleared!");
+        }
+
+        function goToBookmark(page) { renderPage(page); }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+
+        loadPDF();
+    </script>
+
+</body>
+</html>
